@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Authorization Code</title>
+</head>
+<body>
+    <h1>Authorization Code</h1>
+    <p id="auth-code">Loading...</p>
+    <script>
+        // Extract the authorization code from the URL
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+
+        if (code) {
+            document.getElementById("auth-code").innerText = code;
+            console.log("Authorization Code:", code);
+        } else {
+            document.getElementById("auth-code").innerText = "No authorization code found.";
+        }
+    </script>
+</body>
+</html>
